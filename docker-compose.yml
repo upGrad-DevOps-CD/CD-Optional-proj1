@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  # upstack backend
+  upstac-api:
+    build:
+      context: ./upstac-api-master
+    stop_signal: SIGKILL
+    ports:
+      - 8080:8080
+  # upstack backend
+  upstac-frontend:
+    build:
+      context: ./covid-track-ui-master
+    stop_signal: SIGKILL
+    ports:
+      - 80:80
+
